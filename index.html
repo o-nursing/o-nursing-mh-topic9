@@ -1,2 +1,360 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>Loading</title></head><body>Loading</body></html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>O.Nursing — بنك أسئلة الموضوع التاسع: مقدمة عن النواقل العصبية في المخ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --burg:#7C2D3E; --burg-d:#5C1F2D; --gold:#C9A227; --gold-l:#F5ECD7;
+  --cream:#FBF7F0; --warm:#F9EFEA; --ink:#2b2b2b; --mut:#8a7a72;
+  --green:#2e7d4f; --green-bg:#e6f4ec; --red:#b3261e; --red-bg:#fdecea;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Tajawal',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh;}
+.wrap{max-width:760px; margin:0 auto; padding:0 18px 40px; width:100%;}
+/* header */
+header{padding:20px 0 8px; text-align:center;}
+.brand{font-family:'Great Vibes',cursive; font-size:34px; color:var(--burg); line-height:1;}
+.brand .dot{color:#FF8A5F;}
+.brand .star{color:var(--gold); font-size:20px; vertical-align:middle;}
+.sub{font-size:13px; color:var(--mut); margin-top:4px;}
+.rule{height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:12px auto 0; max-width:420px;}
+/* cards */
+.card{background:#fff; border:1px solid #ead9c9; border-radius:16px; padding:20px; margin-top:16px; box-shadow:0 2px 10px rgba(124,45,62,.06);}
+h1{font-size:21px; color:var(--burg); line-height:1.5;}
+h1 .en{font-size:15px; color:var(--mut); display:block; font-weight:500;}
+.meta{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.pill{background:var(--gold-l); color:var(--burg-d); border:1px solid var(--gold); border-radius:20px; padding:4px 12px; font-size:13px; font-weight:700;}
+.pill.soft{background:var(--warm); border-color:#e5c9c0;}
+/* level filter */
+.levels{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;}
+.lvl{border:1.5px solid var(--gold); background:#fff; color:var(--burg); border-radius:20px; padding:7px 16px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit;}
+.lvl.on{background:var(--burg); color:#fff; border-color:var(--burg);}
+.btn{display:block; width:100%; background:var(--burg); color:#fff; border:none; border-radius:12px; padding:14px; font-size:17px; font-weight:800; cursor:pointer; font-family:inherit; margin-top:16px;}
+.btn:hover{background:var(--burg-d);}
+.btn.ghost{background:#fff; color:var(--burg); border:1.5px solid var(--burg); margin-top:10px;}
+.btn:disabled{opacity:.5; cursor:default;}
+.small{font-size:13px; color:var(--mut); text-align:center; margin-top:10px; line-height:1.7;}
+/* quiz */
+.prog{height:8px; background:#eee; border-radius:8px; overflow:hidden; margin-top:16px;}
+.prog i{display:block; height:100%; background:linear-gradient(90deg,var(--gold),var(--burg)); width:0%; transition:width .3s;}
+.qtop{display:flex; justify-content:space-between; align-items:center; margin-top:14px; font-size:13px; color:var(--mut); font-weight:700;}
+.badge{font-size:12px; font-weight:800; border-radius:12px; padding:3px 10px;}
+.badge.easy{background:#e6f4ec; color:var(--green);}
+.badge.med{background:#fdf3d7; color:#8a6d00;}
+.badge.hard{background:#fdecea; color:var(--red);}
+.q{font-size:18px; font-weight:700; line-height:1.8; margin-top:12px; direction:ltr; text-align:left;}
+.q .ar-note{font-size:14px; color:var(--mut); font-weight:500; direction:rtl; text-align:right; display:block; margin-top:4px;}
+.opts{margin-top:14px; display:flex; flex-direction:column; gap:10px;}
+.opt{border:1.5px solid #e5d5c8; background:#fff; border-radius:12px; padding:12px 14px; font-size:16px; cursor:pointer; text-align:left; direction:ltr; font-family:inherit; line-height:1.5;}
+.opt:hover{border-color:var(--gold);}
+.opt.correct{border-color:var(--green); background:var(--green-bg);}
+.opt.wrong{border-color:var(--red); background:var(--red-bg);}
+.opt:disabled{cursor:default;}
+.tf{display:flex; gap:10px; margin-top:14px;}
+.tf .opt{flex:1; text-align:center; font-weight:800; font-size:17px;}
+.hintbtn{background:var(--gold-l); color:var(--burg-d); border:1px solid var(--gold); border-radius:10px; padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; margin-top:14px;}
+.hint{display:none; background:#fffbe6; border:1px dashed var(--gold); border-radius:10px; padding:10px 14px; margin-top:10px; font-size:14px; line-height:1.8;}
+.hint.show{display:block;}
+.explain{display:none; border-radius:10px; padding:12px 14px; margin-top:12px; font-size:14.5px; line-height:1.9;}
+.explain.show{display:block;}
+.explain.ok{background:var(--green-bg); border:1px solid var(--green);}
+.explain.no{background:var(--red-bg); border:1px solid var(--red);}
+.explain b{color:var(--burg);}
+.model{display:none; background:var(--warm); border:1px solid #e5c9c0; border-radius:10px; padding:12px 14px; margin-top:12px; font-size:14.5px; line-height:1.9; white-space:pre-line;}
+.model.show{display:block;}
+textarea{width:100%; min-height:90px; border:1.5px solid #e5d5c8; border-radius:12px; padding:12px; font-family:inherit; font-size:15px; margin-top:14px; direction:ltr;}
+/* results */
+.score-ring{width:150px; height:150px; margin:10px auto; position:relative;}
+.score-ring svg{transform:rotate(-90deg);}
+.score-ring .pct{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; color:var(--burg);}
+.res-line{text-align:center; font-size:16px; line-height:2;}
+.res-line b{color:var(--burg);}
+table.res{width:100%; border-collapse:collapse; margin-top:12px; font-size:14px;}
+table.res td, table.res th{border:1px solid #ead9c9; padding:8px; text-align:center;}
+table.res th{background:var(--burg); color:#fff;}
+.hidden{display:none !important;}
+footer{text-align:center; font-size:12px; color:var(--mut); margin-top:26px; line-height:1.8;}
+/* O.Nursing — QR-only: no copying, no printing */
+body{ -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+textarea{ -webkit-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text; }
+#print-note{ display:none; }
+@media print{ body *{ display:none !important; } #print-note{ display:block !important; text-align:center; font-size:16px; font-weight:700; color:#7c2d3e; margin-top:40%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="star">✦</span> O<span class="dot">.</span>Nursing <span class="star">✦</span></div>
+    <div class="sub">بنك أسئلة — الترم الثاني • تمريض الصحة النفسية</div>
+    <div class="rule"></div>
+  </header>
+
+  <!-- HOME -->
+  <div id="home" class="card">
+    <h1>الموضوع التاسع: مقدمة عن النواقل العصبية في المخ<span class="en">Topic 9 — Introduction about Brain Neurotransmitters</span></h1>
+    <div class="meta">
+      <span class="pill">40 سؤال</span>
+      <span class="pill soft">اختيار من متعدد + صح وخطأ + مقالي</span>
+      <span class="pill soft">متدرجة: سهل ← متوسط ← صعب</span>
+    </div>
+    <p style="margin-top:12px; font-size:14.5px; line-height:1.9;">أسئلة إضافية شاملة كل أفكار الموضوع: النواقل العصبية رسل المخ، الأحماض الأمينية والأساسية منها، نقص الأحماض وأثره، والاختلالات العشرة المرتبطة بالفصام — مع <b>تلميح</b> لكل سؤال وشرح بعد الإجابة.</p>
+    <div class="levels" id="levels">
+      <button class="lvl on" data-lvl="all">الكل (40)</button>
+      <button class="lvl" data-lvl="easy">سهل (15)</button>
+      <button class="lvl" data-lvl="med">متوسط (15)</button>
+      <button class="lvl" data-lvl="hard">صعب (10)</button>
+    </div>
+    <button class="btn" id="btn-start">ابدأ الأسئلة ←</button>
+    <button class="btn ghost hidden" id="btn-resume">كمّل من حيث توقفت</button>
+    <div class="small" id="home-stats"></div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" class="card hidden">
+    <div class="prog"><i id="prog-fill"></i></div>
+    <div class="qtop"><span id="q-count"></span><span id="q-badge"></span><span id="q-score"></span></div>
+    <div class="q" id="q-stem"></div>
+    <div id="q-body"></div>
+    <button class="hintbtn" id="btn-hint">💡 تلميح</button>
+    <div class="hint" id="q-hint"></div>
+    <div class="explain" id="q-explain"></div>
+    <div class="model" id="q-model"></div>
+    <button class="btn hidden" id="btn-next">السؤال التالي ←</button>
+    <button class="btn hidden" id="btn-finish">عرض النتيجة</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card hidden" style="text-align:center;">
+    <h1>النتيجة</h1>
+    <div class="score-ring">
+      <svg width="150" height="150" viewBox="0 0 150 150">
+        <circle cx="75" cy="75" r="65" fill="none" stroke="#eee" stroke-width="10"/>
+        <circle id="ring-fg" cx="75" cy="75" r="65" fill="none" stroke="#7C2D3E" stroke-width="10" stroke-linecap="round" stroke-dasharray="408" stroke-dashoffset="408"/>
+      </svg>
+      <div class="pct" id="res-pct">0%</div>
+    </div>
+    <div class="res-line" id="res-line"></div>
+    <table class="res" id="res-table"></table>
+    <button class="btn" id="btn-retry">إعادة الأسئلة</button>
+    <button class="btn ghost" id="btn-home">رجوع للموضوع التاسع</button>
+  </div>
+
+  <footer>O.Nursing • Dr: Abdullah Shawky<br>الأسئلة من محتوى المحاضرة وأسئلة امتحانات دبلوم المعاهد الفنية الصحية<br><b style="color:#7c2d3e;">الأسئلة خاصة بـ O.Nursing — ممنوع النسخ والنقل</b></footer>
+  <div id="print-note">الأسئلة خاصة بـ O.Nursing — ممنوع النسخ والنقل</div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {"id": 1, "level": "easy", "type": "mcq", "q": "Neurotransmitters are:", "options": ["Hormones secreted by the thyroid gland.", "The messengers in the brain.", "Enzymes that digest protein.", "White blood cells that fight infection."], "correct": 1, "hint": "Messengers — they carry messages in the brain.", "explain": "<b>Neurotransmitters</b> are <b>the messengers in the brain</b>."},
+  {"id": 2, "level": "easy", "type": "mcq", "q": "Neurotransmitters are made from:", "options": ["Fatty acids.", "Glucose.", "Amino acids.", "Vitamins only."], "correct": 2, "hint": "The building blocks are amino acids.", "explain": "Neurotransmitters are made from <b>amino acids</b>."},
+  {"id": 3, "level": "easy", "type": "mcq", "q": "Essential amino acids are amino acids that:", "options": ["Can be made in the body.", "Need to be derived from protein in the diet.", "Are not needed by the brain.", "Convert directly into glucose."], "correct": 1, "hint": "Essential = the body cannot make them — they must come from food.", "explain": "<b>Essential amino acids</b> need to be derived from <b>protein in the diet</b>, because the body cannot make them."},
+  {"id": 4, "level": "easy", "type": "mcq", "q": "Some amino acids convert directly into:", "options": ["Glucose.", "Neurotransmitters.", "Hormones.", "Red blood cells."], "correct": 1, "hint": "Directly — no middle step.", "explain": "Some amino acids convert <b>directly</b> into <b>neurotransmitters</b>."},
+  {"id": 5, "level": "easy", "type": "tf", "q": "Neurotransmitters are the messengers in the brain.", "correct": true, "hint": "The lecture calls them exactly that.", "explain": "TRUE — neurotransmitters are <b>the messengers in the brain</b>."},
+  {"id": 6, "level": "easy", "type": "tf", "q": "All amino acids can be made in the body.", "correct": false, "hint": "Some must come from the diet.", "explain": "FALSE — some amino acids can be made in the body, but others <b>need to be derived from protein in the diet</b> (the essential amino acids)."},
+  {"id": 7, "level": "easy", "type": "mcq", "q": "A deficiency in certain amino acids may leave someone feeling:", "options": ["Energetic and highly motivated.", "Depressed.", "Cheerful and fully relaxed.", "Hungry all the time."], "correct": 1, "hint": "One of the four feelings listed in the lecture.", "explain": "A deficiency in certain amino acids may leave someone feeling <b>depressed</b> (as well as apathetic, unmotivated and unable to relax)."},
+  {"id": 8, "level": "easy", "type": "mcq", "q": "A deficiency in certain amino acids may leave someone feeling:", "options": ["Apathetic.", "Excited.", "Talkative.", "Sleepy after every meal."], "correct": 0, "hint": "Apathetic = not caring, indifferent.", "explain": "A deficiency in certain amino acids may leave someone feeling <b>apathetic</b>."},
+  {"id": 9, "level": "easy", "type": "mcq", "q": "A deficiency in certain amino acids may leave someone feeling:", "options": ["Highly motivated.", "Unmotivated.", "Overly confident.", "Very hungry."], "correct": 1, "hint": "The opposite of motivated.", "explain": "A deficiency in certain amino acids may leave someone feeling <b>unmotivated</b>."},
+  {"id": 10, "level": "easy", "type": "mcq", "q": "A deficiency in certain amino acids may leave someone:", "options": ["Able to relax easily.", "Unable to relax.", "Sleeping 12 hours a day.", "Full of energy."], "correct": 1, "hint": "One of the four feelings — the relaxation one.", "explain": "A deficiency in certain amino acids may leave someone <b>unable to relax</b>."},
+  {"id": 11, "level": "easy", "type": "mcq", "q": "Which vitamin deficiency is listed among the imbalances associated with Schizophrenia?", "options": ["B3 & C Deficiency.", "Vitamin D excess.", "Vitamin A excess.", "Vitamin K Deficiency."], "correct": 0, "hint": "Two vitamins in one box: B3 and C.", "explain": "<b>B3 &amp; C Deficiency</b> is one of the ten imbalances in the book's figure."},
+  {"id": 12, "level": "easy", "type": "mcq", "q": "Heavy Metal Toxicity is:", "options": ["A vitamin deficiency.", "One of the imbalances associated with Schizophrenia.", "A type of hallucination.", "A psychological intervention."], "correct": 1, "hint": "It is one of the ten boxes in the figure.", "explain": "<b>Heavy Metal Toxicity</b> is listed among the nutrient and physiological imbalances associated with Schizophrenia."},
+  {"id": 13, "level": "easy", "type": "mcq", "q": "Hypoglycemia means:", "options": ["High blood sugar.", "Low blood sugar.", "High blood pressure.", "Low body temperature."], "correct": 1, "hint": "Hypo = low; glycemia = blood sugar.", "explain": "<b>Hypoglycemia</b> is low blood sugar, and it is one of the imbalances in the figure."},
+  {"id": 14, "level": "easy", "type": "mcq", "q": "Which glands are mentioned in the imbalances figure?", "options": ["Thyroid & Adrenal.", "Pituitary & Pineal.", "Pancreas & Liver.", "Kidney & Spleen."], "correct": 0, "hint": "Two glands — one in the neck, one above the kidney.", "explain": "<b>Thyroid &amp; Adrenal Dysfunction</b> is one of the ten imbalances."},
+  {"id": 15, "level": "easy", "type": "tf", "q": "Essential amino acids come from protein in the diet.", "correct": true, "hint": "That is what makes them essential.", "explain": "TRUE — essential amino acids <b>need to be derived from protein in the diet</b>."},
+  {"id": 16, "level": "med", "type": "mcq", "q": "If the diet does not provide adequate amounts of amino acids:", "options": ["More neurotransmitters are produced.", "Sufficient neurotransmitters may not be produced.", "The neurons stop working completely.", "Nothing changes in the brain."], "correct": 1, "hint": "Less raw material = less product.", "explain": "If the diet does not provide adequate amino acids, <b>sufficient neurotransmitters may not be produced</b>."},
+  {"id": 17, "level": "med", "type": "mcq", "q": "Insufficient neurotransmitter production may create:", "options": ["Problematic communication between neurons.", "Stronger bones.", "Faster digestion.", "Better eyesight."], "correct": 0, "hint": "The messengers are short — so the messages fail.", "explain": "Insufficient neurotransmitters may create <b>problematic communication between neurons</b>."},
+  {"id": 18, "level": "med", "type": "mcq", "q": "EFA Deficiency is linked in the figure to:", "options": ["Oxidative Stress.", "Mal-absorption.", "Neuroleptic Palliation.", "Heavy metal toxicity."], "correct": 0, "hint": "EFA = essential fatty acids — the stress is oxidative.", "explain": "<b>EFA Deficiency</b> is linked to <b>Oxidative Stress</b>."},
+  {"id": 19, "level": "med", "type": "mcq", "q": "Which imbalance involves inadequate nutrition, mal-absorption and food allergy?", "options": ["Undermethylation.", "B3 & C Deficiency.", "Digestive Dysfunction.", "Receptor Imbalance."], "correct": 2, "hint": "Nutrition, absorption and food allergy all belong to digestion.", "explain": "<b>Digestive Dysfunction</b> involves <b>inadequate nutrition, mal-absorption and food allergy</b>."},
+  {"id": 20, "level": "med", "type": "mcq", "q": "Undermethylation is linked in the figure to:", "options": ["Heavy metal toxicity.", "Neurotransmitter Deficiency.", "High blood sugar.", "Excess vitamin C."], "correct": 1, "hint": "Under-methylation = too little methylation — and too few messengers.", "explain": "<b>Undermethylation</b> is linked to <b>Neurotransmitter Deficiency</b>."},
+  {"id": 21, "level": "med", "type": "mcq", "q": "Receptor Imbalance is linked in the figure to:", "options": ["Neuroleptic Palliation.", "Food allergy.", "Oxidative stress.", "Mal-absorption."], "correct": 0, "hint": "Receptors + neuroleptic (antipsychotic) palliation.", "explain": "<b>Receptor Imbalance</b> is linked to <b>Neuroleptic Palliation</b>."},
+  {"id": 22, "level": "med", "type": "mcq", "q": "Which deficiency pairs a vitamin with a mineral?", "options": ["B3 & C Deficiency.", "B6 & Zinc Deficiency.", "EFA Deficiency.", "Heavy Metal Toxicity."], "correct": 1, "hint": "B6 is the vitamin, zinc is the mineral.", "explain": "<b>B6 &amp; Zinc Deficiency</b> pairs vitamin B6 with the mineral zinc."},
+  {"id": 23, "level": "med", "type": "mcq", "q": "Which of the following is NOT listed among the imbalances in the book's figure?", "options": ["Hypoglycemia.", "High blood pressure.", "Thyroid & Adrenal Dysfunction.", "Heavy Metal Toxicity."], "correct": 1, "hint": "High blood pressure is not one of the ten boxes.", "explain": "<b>High blood pressure</b> is not in the figure. The ten imbalances are: B3 &amp; C, Heavy Metal Toxicity, B6 &amp; Zinc, EFA, decreased neurotransmitter, receptor imbalance, digestive dysfunction, hypoglycemia, undermethylation, and thyroid &amp; adrenal dysfunction."},
+  {"id": 24, "level": "med", "type": "tf", "q": "If the diet lacks amino acids, neurotransmitter production is not affected.", "correct": false, "hint": "The lecture says the opposite.", "explain": "FALSE — if the diet does not provide adequate amino acids, <b>sufficient neurotransmitters may not be produced</b>."},
+  {"id": 25, "level": "med", "type": "tf", "q": "Hypoglycemia is listed among the imbalances associated with Schizophrenia.", "correct": true, "hint": "It is one of the ten boxes.", "explain": "TRUE — <b>Hypoglycemia</b> (low blood sugar) is one of the imbalances in the figure."},
+  {"id": 26, "level": "med", "type": "mcq", "q": "The book's figure is titled “Nutrient and Physiological Imbalances associated with”:", "options": ["Depression.", "Schizophrenia.", "Anxiety.", "Bipolar disorder."], "correct": 1, "hint": "Read the figure's title.", "explain": "The figure is titled “Nutrient and Physiological Imbalances associated with <b>Schizophrenia</b>”."},
+  {"id": 27, "level": "med", "type": "mcq", "q": "In the figure, the symbol ↓ next to “Neurotransmitter” means:", "options": ["Increase.", "Decrease.", "No change.", "Fluctuation."], "correct": 1, "hint": "The down arrow means a drop.", "explain": "↓ means a <b>decrease</b> — a drop in neurotransmitters."},
+  {"id": 28, "level": "med", "type": "written", "q": "List the four feelings that may result from a deficiency in certain amino acids.", "model": "1) Depressed.\n2) Apathetic.\n3) Unmotivated.\n4) Unable to relax.", "hint": "Four feelings: sad, indifferent, no drive, cannot relax.", "explain": "The four feelings are: <b>depressed, apathetic, unmotivated and unable to relax</b>."},
+  {"id": 29, "level": "med", "type": "mcq", "q": "According to the figure, the drop in neurotransmitters may be:", "options": ["The only cause of Schizophrenia.", "An end result rather than the causative factor.", "A sign of high blood pressure.", "Caused by too much protein."], "correct": 1, "hint": "The figure says “End Result versus Causative Factor”.", "explain": "The figure warns that the drop in neurotransmitters may be an <b>end result versus causative factor</b> — a result of the disorder, not necessarily its cause."},
+  {"id": 30, "level": "med", "type": "mcq", "q": "Which two vitamins are named together in one imbalance box?", "options": ["B1 and B2.", "B3 and C.", "A and D.", "B12 and E."], "correct": 1, "hint": "B3 plus C.", "explain": "<b>B3 &amp; C Deficiency</b> names vitamins B3 and C together."},
+  {"id": 31, "level": "hard", "type": "mcq", "q": "Which statement about essential amino acids is correct?", "options": ["They can be made in the body.", "They cannot be made in the body and must come from protein in the diet.", "They are not needed to make neurotransmitters.", "They convert directly into glucose."], "correct": 1, "hint": "Essential = the body cannot make them.", "explain": "<b>Essential amino acids</b> cannot be made in the body — they <b>must come from protein in the diet</b>."},
+  {"id": 32, "level": "hard", "type": "tf", "q": "Neurotransmitters are trying to maintain balance between ID and super ego by fulfilling its intermediary task.", "correct": false, "hint": "That is the Ego's job — a repeated exam trap.", "explain": "FALSE — this is a <b>repeated trap</b> in the diploma exams. Maintaining balance between the ID and the super ego is the function of the <b>Ego</b>, not of neurotransmitters. Neurotransmitters are the chemical messengers in the brain."},
+  {"id": 33, "level": "hard", "type": "mcq", "q": "“Trying to maintain balance between ID and super ego by fulfilling its intermediary task by protecting Id from the dangers of the external world” is the function of the:", "options": ["Neurotransmitters.", "Ego.", "Superego.", "ID."], "correct": 1, "hint": "The intermediary between ID and super ego is the Ego.", "explain": "The <b>Ego</b> tries to maintain balance between the ID and the super ego. This statement appears in the diploma exams as a matching item — and neurotransmitters are the wrong match."},
+  {"id": 34, "level": "hard", "type": "mcq", "q": "What does “End Result versus Causative Factor” warn about the low neurotransmitter level?", "options": ["It proves neurotransmitters cause Schizophrenia.", "It may be a result of the disorder, not its cause.", "It means the level is normal.", "It means vitamins are the only cause."], "correct": 1, "hint": "Result versus cause — do not confuse them.", "explain": "The warning is that a low neurotransmitter level may be an <b>end result</b> of Schizophrenia (or of the other imbalances) rather than the <b>cause</b> that produced it."},
+  {"id": 35, "level": "hard", "type": "mcq", "q": "Which pairing from the figure is correct?", "options": ["Undermethylation — Oxidative Stress.", "EFA Deficiency — Oxidative Stress.", "Digestive Dysfunction — Neuroleptic Palliation.", "Receptor Imbalance — Mal-absorption."], "correct": 1, "hint": "Match each box with its own subtitle.", "explain": "<b>EFA Deficiency — Oxidative Stress</b> is the correct pairing. Undermethylation pairs with neurotransmitter deficiency; digestive dysfunction with mal-absorption; receptor imbalance with neuroleptic palliation."},
+  {"id": 36, "level": "hard", "type": "mcq", "q": "Which pairing from the figure is WRONG?", "options": ["EFA Deficiency — Oxidative Stress.", "Digestive Dysfunction — Mal-absorption.", "Receptor Imbalance — Neuroleptic Palliation.", "Hypoglycemia — Heavy metal toxicity."], "correct": 3, "hint": "Hypoglycemia has nothing to do with heavy metals.", "explain": "<b>Hypoglycemia — Heavy metal toxicity</b> is wrong: hypoglycemia stands alone, and heavy metal toxicity is a separate box."},
+  {"id": 37, "level": "hard", "type": "mcq", "q": "How many imbalances does the book's figure list?", "options": ["Six.", "Eight.", "Ten.", "Twelve."], "correct": 2, "hint": "Count the boxes around Schizophrenia.", "explain": "The figure lists <b>ten</b> imbalances: B3 &amp; C, Heavy Metal Toxicity, B6 &amp; Zinc, EFA, decreased neurotransmitter, receptor imbalance, digestive dysfunction, hypoglycemia, undermethylation, and thyroid &amp; adrenal dysfunction."},
+  {"id": 38, "level": "hard", "type": "tf", "q": "The figure lists exactly ten nutrient and physiological imbalances associated with Schizophrenia.", "correct": true, "hint": "Count them: 10 boxes.", "explain": "TRUE — there are <b>ten</b> imbalances in the figure."},
+  {"id": 39, "level": "hard", "type": "mcq", "q": "“Neuroleptic Palliation” is linked in the figure to:", "options": ["Undermethylation.", "Receptor Imbalance.", "Hypoglycemia.", "EFA Deficiency."], "correct": 1, "hint": "Neuroleptic = antipsychotic; palliation sits with the receptors.", "explain": "<b>Neuroleptic Palliation</b> is linked to <b>Receptor Imbalance</b>."},
+  {"id": 40, "level": "hard", "type": "written", "q": "List five imbalances from the book's figure that are associated with Schizophrenia.", "model": "Any five of:\n1) B3 & C Deficiency.\n2) Heavy Metal Toxicity.\n3) B6 & Zinc Deficiency.\n4) EFA Deficiency (Oxidative Stress).\n5) Decreased Neurotransmitter (End Result versus Causative Factor).\n6) Receptor Imbalance (Neuroleptic Palliation).\n7) Digestive Dysfunction (Inadequate Nutrition, Mal-absorption, Food Allergy).\n8) Hypoglycemia.\n9) Undermethylation (Neurotransmitter Deficiency).\n10) Thyroid & Adrenal Dysfunction.", "hint": "Five of the ten boxes — name the imbalance and its subtitle where there is one.", "explain": "Any five of the <b>ten</b> imbalances in the figure are correct — for example B3 &amp; C Deficiency, Heavy Metal Toxicity, B6 &amp; Zinc Deficiency, EFA Deficiency (Oxidative Stress), and Hypoglycemia."}
+];
+</script>
+
+<script>
+const LVL = {easy:"سهل", med:"متوسط", hard:"صعب"};
+const LVLCLS = {easy:"easy", med:"med", hard:"hard"};
+const KEY = "onursing_topic9_progress_v1";
+let selectedLvl = "all";
+let queue = [], idx = 0, score = 0, answered = 0, results = [];
+let levelStats = {easy:{t:0,c:0}, med:{t:0,c:0}, hard:{t:0,c:0}};
+let locked = false;
+
+function $(id){ return document.getElementById(id); }
+function loadProg(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+function saveProg(p){ try{ localStorage.setItem(KEY, JSON.stringify(p)); }catch(e){} }
+
+function refreshHome(){
+  const p = loadProg();
+  const done = p.done || {}, correct = p.correct || {};
+  const n = Object.keys(done).length;
+  const c = Object.keys(correct).length;
+  $("home-stats").textContent = n ? ("تقدّمك: أجبت على " + n + " سؤال من 40 — إجابات صحيحة: " + c + (p.best!=null ? (" • أفضل نتيجة: " + p.best + "%") : "")) : "ابدأ من السهل وتدرّج — كل سؤال معه تلميح وشرح.";
+  $("btn-resume").classList.toggle("hidden", !n || n>=40);
+}
+document.querySelectorAll("#levels .lvl").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.querySelectorAll("#levels .lvl").forEach(x=>x.classList.remove("on"));
+    b.classList.add("on"); selectedLvl = b.dataset.lvl;
+  });
+});
+$("btn-start").addEventListener("click", ()=>startQuiz(false));
+$("btn-resume").addEventListener("click", ()=>startQuiz(true));
+
+function buildQueue(resume){
+  let pool = QUESTIONS.filter(q => selectedLvl==="all" || q.level===selectedLvl);
+  if(resume){
+    const p = loadProg(); const done = p.done || {};
+    pool = pool.filter(q => !done[q.id]);
+    if(!pool.length){ pool = QUESTIONS.filter(q => selectedLvl==="all" || q.level===selectedLvl); }
+  }
+  return pool.slice();
+}
+function startQuiz(resume){
+  queue = buildQueue(resume); idx = 0; score = 0; answered = 0; results = [];
+  levelStats = {easy:{t:0,c:0}, med:{t:0,c:0}, hard:{t:0,c:0}};
+  queue.forEach(q=>{ if(q.type!=="written") levelStats[q.level].t++; });
+  $("home").classList.add("hidden"); $("results").classList.add("hidden"); $("quiz").classList.remove("hidden");
+  renderQ();
+}
+function cur(){ return queue[idx]; }
+function renderQ(){
+  const q = cur(); locked = false;
+  $("prog-fill").style.width = (idx/queue.length*100) + "%";
+  $("q-count").textContent = "سؤال " + (idx+1) + " من " + queue.length;
+  $("q-badge").innerHTML = '<span class="badge '+LVLCLS[q.level]+'">'+LVL[q.level]+'</span>';
+  $("q-score").textContent = "صح: " + score + " / " + answered;
+  $("q-stem").innerHTML = q.q + (q.ar ? '<span class="ar-note">'+q.ar+'</span>' : "");
+  $("q-hint").classList.remove("show"); $("q-hint").textContent = q.hint || "";
+  $("btn-hint").style.display = q.hint ? "" : "none";
+  const ex = $("q-explain"); ex.classList.remove("show","ok","no"); ex.innerHTML = "";
+  const mo = $("q-model"); mo.classList.remove("show"); mo.textContent = "";
+  $("btn-next").classList.add("hidden"); $("btn-finish").classList.add("hidden");
+  const body = $("q-body"); body.innerHTML = "";
+  if(q.type === "mcq"){
+    const box = document.createElement("div"); box.className = "opts";
+    q.options.forEach((op,i)=>{
+      const b = document.createElement("button"); b.className = "opt"; b.textContent = op;
+      b.addEventListener("click", ()=>answerMcq(i, b)); box.appendChild(b);
+    });
+    body.appendChild(box);
+  } else if(q.type === "tf"){
+    const box = document.createElement("div"); box.className = "tf";
+    [["True", true], ["False", false]].forEach(([label, val])=>{
+      const b = document.createElement("button"); b.className = "opt"; b.textContent = label;
+      b.addEventListener("click", ()=>answerTf(val, b)); box.appendChild(b);
+    });
+    body.appendChild(box);
+  } else if(q.type === "written"){
+    const ta = document.createElement("textarea"); ta.placeholder = "اكتب إجابتك هنا…";
+    body.appendChild(ta);
+    const b = document.createElement("button"); b.className = "btn"; b.textContent = "أظهر الإجابة النموذجية";
+    b.addEventListener("click", ()=>{
+      if(locked) return; locked = true;
+      mo.textContent = q.model; mo.classList.add("show");
+      ex.innerHTML = "<b>الشرح:</b> " + q.explain; ex.classList.add("show","ok");
+      b.disabled = true; showNav();
+    });
+    body.appendChild(b);
+  }
+}
+$("btn-hint").addEventListener("click", ()=>{ $("q-hint").classList.toggle("show"); });
+function markProgress(id, ok){
+  const p = loadProg(); p.done = p.done || {}; p.correct = p.correct || {};
+  p.done[id] = true; if(ok) p.correct[id] = true; saveProg(p);
+}
+function finishAnswer(ok){
+  answered++; if(ok) score++;
+  markProgress(cur().id, ok);
+  results.push({id:cur().id, ok:ok});
+  $("q-score").textContent = "صح: " + score + " / " + answered;
+  showNav();
+}
+function showNav(){
+  if(idx < queue.length-1){ $("btn-next").classList.remove("hidden"); }
+  else { $("btn-finish").classList.remove("hidden"); }
+}
+function answerMcq(i, btn){
+  if(locked) return; locked = true;
+  const q = cur(); const ok = (i === q.correct);
+  document.querySelectorAll("#q-body .opt").forEach((el, j)=>{
+    el.disabled = true;
+    if(j === q.correct) el.classList.add("correct");
+    if(j === i && !ok) el.classList.add("wrong");
+  });
+  const ex = $("q-explain");
+  ex.innerHTML = (ok ? "<b>✓ إجابة صحيحة.</b> " : "<b>✗ إجابة خاطئة.</b> الصح: <b>" + q.options[q.correct] + "</b><br>") + q.explain;
+  ex.classList.add("show", ok ? "ok" : "no");
+  finishAnswer(ok);
+}
+function answerTf(val, btn){
+  if(locked) return; locked = true;
+  const q = cur(); const ok = (val === q.correct);
+  document.querySelectorAll("#q-body .opt").forEach(el=>{
+    el.disabled = true;
+    const v = el.textContent === "True";
+    if(v === q.correct) el.classList.add("correct");
+    if(el === btn && !ok) el.classList.add("wrong");
+  });
+  const ex = $("q-explain");
+  ex.innerHTML = (ok ? "<b>✓ إجابة صحيحة.</b> " : "<b>✗ إجابة خاطئة.</b> الصح: <b>" + (q.correct ? "True" : "False") + "</b><br>") + q.explain;
+  ex.classList.add("show", ok ? "ok" : "no");
+  finishAnswer(ok);
+}
+$("btn-next").addEventListener("click", ()=>{ idx++; renderQ(); });
+$("btn-finish").addEventListener("click", showResults);
+function showResults(){
+  $("quiz").classList.add("hidden"); $("results").classList.remove("hidden");
+  const total = results.length || 1;
+  const pct = Math.round(score/total*100);
+  $("res-pct").textContent = pct + "%";
+  const ring = $("ring-fg");
+  ring.style.strokeDashoffset = 408 - (408*pct/100);
+  const p = loadProg(); if(p.best==null || pct > p.best){ p.best = pct; saveProg(p); }
+  let msg = pct>=90 ? "ممتاز! الموضوع ده بقى في جيبك." : pct>=70 ? "كويس جداً — راجع الغلطات وهتبقى ممتاز." : pct>=50 ? "بداية كويسة — راجع الشرح والغلطات وحاول تاني." : "محتاج مراجعة — ارجع للشرح في الملف وحاول تاني.";
+  $("res-line").innerHTML = "أجبت صح على <b>" + score + "</b> من <b>" + total + "</b> سؤال<br>" + msg;
+  let rows = "<tr><th>المستوى</th><th>صح</th><th>من</th></tr>";
+  const agg = {easy:{t:0,c:0}, med:{t:0,c:0}, hard:{t:0,c:0}};
+  results.forEach(r=>{ const q = QUESTIONS.find(x=>x.id===r.id); if(!q) return; agg[q.level].t++; if(r.ok) agg[q.level].c++; });
+  ["easy","med","hard"].forEach(l=>{ if(agg[l].t) rows += "<tr><td>"+LVL[l]+"</td><td>"+agg[l].c+"</td><td>"+agg[l].t+"</td></tr>"; });
+  $("res-table").innerHTML = rows;
+}
+$("btn-retry").addEventListener("click", ()=>startQuiz(false));
+$("btn-home").addEventListener("click", ()=>{
+  $("results").classList.add("hidden"); $("home").classList.remove("hidden"); refreshHome();
+
+/* O.Nursing — QR-only protection: block copying, right-click, printing */
+document.addEventListener("contextmenu", function(e){ e.preventDefault(); });
+document.addEventListener("copy", function(e){ e.preventDefault(); });
+document.addEventListener("cut", function(e){ e.preventDefault(); });
+document.addEventListener("dragstart", function(e){ e.preventDefault(); });
+document.addEventListener("keydown", function(e){
+  if((e.ctrlKey || e.metaKey) && ["c","x","u","s","p","a"].indexOf(e.key.toLowerCase()) !== -1){ e.preventDefault(); }
+});
+});
+refreshHome();
+</script>
+</body>
+</html>
